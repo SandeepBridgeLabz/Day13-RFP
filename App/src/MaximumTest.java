@@ -1,8 +1,8 @@
 public class MaximumTest {
 
-    public static String testMaximum(String x, String y, String z) {
+    public static <T extends Comparable<T>> T testMaximum(T x, T y, T z) {
 
-        String max = x;
+        T max = x;
 
         if (y.compareTo(max) > 0) {
             max = y;
@@ -17,10 +17,10 @@ public class MaximumTest {
 
     public static void main(String[] args) {
 
-        System.out.println(testMaximum("Peach", "Apple", "Banana"));
+        System.out.println(testMaximum(30, 20, 10));
+
+        System.out.println(testMaximum(10.5f, 40.5f, 20.5f));
 
         System.out.println(testMaximum("Apple", "Peach", "Banana"));
-
-        System.out.println(testMaximum("Apple", "Banana", "Peach"));
     }
 }
