@@ -6,19 +6,24 @@ public class MaximumTest {
 
         Arrays.sort(values);
 
-        return values[values.length - 1];
+        T max = values[values.length - 1];
+
+        printMax(max);
+
+        return max;
+    }
+
+    public static <T> void printMax(T max) {
+
+        System.out.println("Maximum Value is: " + max);
     }
 
     public static void main(String[] args) {
 
-        System.out.println(testMaximum(10, 20, 30, 40, 50));
+        testMaximum(10, 20, 30, 40);
 
-        System.out.println(testMaximum(10.5f, 80.5f, 20.5f, 90.5f));
+        testMaximum(10.5f, 70.5f, 80.5f);
 
-        System.out.println(testMaximum(
-                "Apple",
-                "Peach",
-                "Banana",
-                "Orange"));
+        testMaximum("Apple", "Peach", "Banana");
     }
 }
